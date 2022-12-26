@@ -1,0 +1,17 @@
+{
+    "name": "bilalbarina/php-mvc",
+    "description": "PHP MVC with CRUD",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bilalbarina",
+            "email": "dev.barina@gmail.com"
+        }
+    ],
+    "require": {}
+}
