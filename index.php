@@ -4,7 +4,8 @@ require __DIR__ . '/core/bootstrap.php';
 
 // Split 'request' query.
 if (empty($_GET['request'])) {
-    die("Invalid request. No Controller found.");
+    view('index');
+    // die("Invalid request. No Controller found.");
 }
 
 $request = $_GET['request'];

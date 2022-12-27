@@ -27,7 +27,17 @@ include base_path('layouts/head.php') ;
      <tr>
         <td><?php echo $value['id'] ?></td>
         <td><?php echo $value['Task'] ?></td>
-        <td><a href="delete?id=" class="btn btn-danger">Delete</a></td>
+
+        <td>
+         <form action="edit" method="post">
+            <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
+            <button >edit</button>
+         </form>
+         <form action="delete" method="post">
+            <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
+            <button >delete</button>
+         </form>
+        </td>
         </tr>
    <?php } ?>
    </tbody>
