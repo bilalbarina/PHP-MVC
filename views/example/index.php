@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   <table>
+
+<a href="create">Add task</a>
+<table>
 
    <thead>
     <tr>
@@ -20,6 +22,7 @@
      <tr>
         <td><?php echo $value['id'] ?></td>
         <td><?php echo $value['Task'] ?></td>
+        <td><a href="delete?id=">Delete</a></td>
         </tr>
    <?php } ?>
    </tbody>
