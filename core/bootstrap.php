@@ -1,5 +1,4 @@
 <?php
 
-define ('ROOT', __DIR__ . '/../');
-
+// Require composer.
 require __DIR__ . '/../vendor/autoload.php';
