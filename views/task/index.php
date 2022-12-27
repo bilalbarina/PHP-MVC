@@ -31,11 +31,11 @@ include base_path('layouts/head.php') ;
         <td>
          <form action="edit" method="post">
             <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
-            <button >edit</button>
+            <button class="btn btn-warning"  >edit</button>
          </form>
          <form action="delete" method="post">
             <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
-            <button >delete</button>
+            <button class="btn btn-danger" >delete</button>
          </form>
         </td>
         </tr>
