@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1> Example Index </h1>
+   <table>
+
+   <thead>
+    <tr>
+       <th>Id</th>
+    <th>Task</th>
+    </tr>   
+</thead>
+   <tbody>
+    <?php foreach ($tasks as  $value) {
+     ?>
+     <tr>
+        <td><?php echo $value['id'] ?></td>
+        <td><?php echo $value['Task'] ?></td>
+        </tr>
+   <?php } ?>
+   </tbody>
+   </table>
 </body>
 </html>
