@@ -14,7 +14,7 @@ $exploded = explode('/', $request);
 $controllerName = $exploded[0];
 
 // Get method name if exist. Default: index.
-$method = isset($exploded[1]) ? $exploded[1] : 'index';
+$method = isset($exploded[1]) && !empty($exploded[1]) ? $exploded[1] : 'index';
 
 // Initialize the controller instance.
 $controllerInstance = init_controller($controllerName);
