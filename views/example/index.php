@@ -1,3 +1,6 @@
+<?php
+include base_path('layouts/head.php') ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +10,14 @@
 </head>
 <body>
 
-<a href="create">Add task</a>
-<table>
+<a href="create" class="btn btn-primary">Add task</a>
+<table class="table">
 
    <thead>
     <tr>
        <th>Id</th>
-    <th>Task</th>
+       <th>Task</th>
+       <th>Action</th>
     </tr>   
 </thead>
    <tbody>
@@ -22,7 +26,7 @@
      <tr>
         <td><?php echo $value['id'] ?></td>
         <td><?php echo $value['Task'] ?></td>
-        <td><a href="delete?id=">Delete</a></td>
+        <td><a href="delete?id=" class="btn btn-danger">Delete</a></td>
         </tr>
    <?php } ?>
    </tbody>
