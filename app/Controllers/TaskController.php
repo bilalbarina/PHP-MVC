@@ -38,9 +38,22 @@ class TaskController {
     public function edit(){
         $id = $_POST['id'];
         $taskModel = new Task();
-        $tasks = $taskModel->all()->find($id)->first();
+        $tasks = $taskModel->find($id)->first();
         // var_dump($tasks);
-         view("task.edit",compact("tasks"));
-
+        view("task.edit",compact("tasks"));
+        
+    }
+    public function update(){
+        
+        $id = $_POST["id"];
+        $taskModel= new Task();
+    var_dump($_POST);
+    // die();
+        $taskModel->find($id)->update([
+            'Task' => $_POST['name']
+        ]);
+        header('Location:./index');
+        // var_dump($tasks);
+        
     }
 }
