@@ -10,14 +10,15 @@ include base_path('layouts/head.php') ;
 </head>
 <body>
 
-<a href="create" class="btn btn-primary">Add task</a>
+<a href="create" class="btn btn-primary ">Add task</a>
+<div class="table-responsive">
 <table class="table">
 
    <thead>
     <tr>
-       <th>Id</th>
-       <th>Task</th>
-       <th>Action</th>
+       <th  scope="col">Id</th>
+       <th  scope="col">Task</th>
+       <th  scope="col">Action</th>
     </tr>   
 </thead>
    <tbody>
@@ -31,5 +32,6 @@ include base_path('layouts/head.php') ;
    <?php } ?>
    </tbody>
    </table>
+   </div>
 </body>
 </html>
