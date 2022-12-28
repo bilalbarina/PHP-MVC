@@ -36,9 +36,9 @@
                                             id="Password" placeholder="Password">
                                     </div>
                                 </div>
-                                <a class="btn btn-primary btn-user btn-block">
+                                <button class="btn btn-primary btn-user btn-block">
                                     Register
-                                </a>
+                                </button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
