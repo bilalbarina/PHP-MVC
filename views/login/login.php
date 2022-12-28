@@ -1,7 +1,7 @@
 <?php
  include base_path('views/layouts/head.php');
 ?>
-</body>
+<body class="bg-gradient-primary">
 <div class="container">
 
         <!-- Outer Row -->
@@ -11,7 +11,7 @@
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-                        <div style="    justify-content: space-around" class="row">
+                        <div style="justify-content: space-around" class="row">
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -35,9 +35,6 @@
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i>  Google
                                         </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i>  Facebook
-                                        </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
@@ -46,7 +43,7 @@
                                     
                                     <div class="text-center">
                                     <form action="./formRegister" method="post">
-                                            <a class="small" >Créez un compte!</a>
+                                            <button class="small" >Créez un compte!</button>
                                     </form> 
                         
                                     </div>
@@ -61,5 +58,5 @@
         </div>
 
     </div>
-
+</body>
 </html>
