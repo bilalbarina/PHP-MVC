@@ -4,7 +4,7 @@
 <head>
 
 <?php
-include base_path('layouts/head.php') ;
+include base_path('views/layouts/head.php') ;
 ?>
 </head>
 
@@ -15,7 +15,7 @@ include base_path('layouts/head.php') ;
 
         <!-- Sidebar -->
         <?php
-           include base_path('layouts/sidebar.php') ;
+           include base_path('views/layouts/sidebar.php') ;
          ?>
         
         <!-- End of Sidebar -->
@@ -28,7 +28,7 @@ include base_path('layouts/head.php') ;
 
                 <!-- start header -->
                 <?php
-                     include base_path('layouts/header.php') ;
+                     include base_path('views/layouts/header.php') ;
                 ?>
               
                 <!-- End header -->
@@ -52,7 +52,7 @@ include base_path('layouts/head.php') ;
             <!-- Footer -->
             
                  <?php
-                     include base_path('layouts/footer.php') ;
+                     include base_path('views/layouts/footer.php') ;
                 ?>
            
             <!-- End of Footer -->
