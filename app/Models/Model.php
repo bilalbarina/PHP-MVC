@@ -54,10 +54,12 @@ abstract class Model {
     public function create(array $data)
     {
         $columns = array_keys($data);
+        
         $values = array_values($data);
-
+    
         $columnsQuery = implode(",", $columns);
         $valuesQuery = implode("','", $values);
+       
 
         $query = "INSERT INTO {$this->table} ($columnsQuery) VALUES ('$valuesQuery')";
         return $this->pdo->exec($query);

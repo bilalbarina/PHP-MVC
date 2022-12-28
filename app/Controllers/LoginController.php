@@ -42,5 +42,20 @@ class LoginController{
     function formRegister(){
         view("login.register");
     }
+
+    function register(){
+        $LoginModel = new Login();
+        $LoginModel->create([
+
+                'name' => $_POST['name'],
+                'prenom' => $_POST['prenom'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password'],
+            
+        ]);
+        header('Location:../login/form');
+
+
+    }
 }
 
