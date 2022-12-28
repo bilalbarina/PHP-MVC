@@ -7,17 +7,20 @@ use App\Models\Task;
 
 class TaskController {
 
+    function __construct()
+    {
+        sessionPages(); 
+    }
   
     public function index() {
-
-
+       
         $taskModel = new Task();
         $tasks = $taskModel->all()->get();
          view("task.index",compact("tasks"));
     }
 
     public function create(){
-
+      
     view("task.create");
     }
     public function store(){

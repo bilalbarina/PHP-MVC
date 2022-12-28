@@ -1,8 +1,13 @@
 <?php
-
-if(!isset( $_SESSION['name']) and  $_GET['request'] != "login/formRegister" and  $_GET['request'] != "login/form" ){ 
+function sessionPages(){
+if(!isset( $_SESSION['name']) ){ 
     header('Location:../login/form');
    }
+
+var_dump('ggg');
+die();
+}
+//    &&  $_GET['request'] != "login/formRegister" && $_GET['request'] != "login/form"
 
 function base_path($path = null)
 {
