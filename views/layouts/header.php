@@ -34,7 +34,10 @@
         </li>
 
         <div class="topbar-divider d-none d-sm-block"></div>
-
+         <?php
+           if (isset($_SESSION["name"]) ) {
+           
+            ?>
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +53,17 @@
                 
             </div>
         </li>
-
+        <?php }
+        else{
+            ?>
+        
+        <a class="dropdown-item" href="../login/form" >
+        <i class="fas fa-sign-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Login
+    </a>
+    <?php 
+        }
+        ?>
     </ul>
 
 </nav>
