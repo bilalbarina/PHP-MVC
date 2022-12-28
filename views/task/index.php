@@ -25,14 +25,14 @@ if (!isset($page)) {
                   <tr>
                      <td><?php echo $value['id'] ?></td>
                      <td><?php echo $value['Task'] ?></td>
-                     <td>
-                        <form action="edit" method="post">
+                     <td style="display: inline-flex;width: 100%">
+                        <form action="edit" method="post" style="padding-right: 5px;">
                            <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
-                           <button class="btn btn-warning">edit</button>
+                           <button class="btn btn-warning">Edit</button>
                         </form>
                         <form action="delete" method="post">
                            <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
-                           <button class="btn btn-danger">delete</button>
+                           <button class="btn btn-danger">Delete</button>
                         </form>
                      </td>
 
