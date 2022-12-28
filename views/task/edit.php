@@ -11,7 +11,7 @@ if (!isset($page)) {
                         </div>
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Ajouter tache</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Modifier tache</h1>
                             </div>
                             <form  action="./update" method="post" class="user">
                                 <div class="form-group row">
@@ -32,6 +32,6 @@ if (!isset($page)) {
                             
                             
                         </div>
-
+                    
 </div>
 
