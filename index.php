@@ -8,6 +8,7 @@ if (empty($_GET['request'])) {
     // die("Invalid request. No Controller found.");
 }
 
+
 $request = $_GET['request'];
 $exploded = explode('/', $request);
 

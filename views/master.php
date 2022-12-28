@@ -1,5 +1,8 @@
 <?php
-session_start()
+session_start();
+if(!isset( $_SESSION['name'])){
+    header('Location:../login/form');
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
