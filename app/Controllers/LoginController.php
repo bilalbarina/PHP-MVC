@@ -38,5 +38,9 @@ class LoginController{
           header('Location:../login/form');
         }
     }
+
+    function formRegister(){
+        view("login.register");
+    }
 }
 
