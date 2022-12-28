@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Gestion de projet</div>
+                <div class="sidebar-brand-text ">Gestion des briefs projet</div>
             </a>
 
             <!-- Divider -->
