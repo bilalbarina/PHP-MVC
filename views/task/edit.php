@@ -32,7 +32,6 @@ if (!isset($page)) {
                             
                             
                         </div>
-                    </div>
 
 </div>
 
