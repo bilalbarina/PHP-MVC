@@ -1,5 +1,9 @@
 <?php
 
+if(!isset( $_SESSION['name']) and  $_GET['request'] != "login/formRegister" and  $_GET['request'] != "login/form" ){ 
+    header('Location:../login/form');
+   }
+
 function base_path($path = null)
 {
     return __DIR__ . '/../' . $path;
