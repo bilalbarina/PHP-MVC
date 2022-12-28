@@ -1,17 +1,37 @@
 <?php
-include base_path('layouts/head.php') ;
+if (!isset($page)) {
+   $page = 'views/task/create.php';
+   include base_path('views/master.php');
+}
 ?>
-<html>
-    
-<h1>Add Task</h1>
-<form action="./store" method="post" class="form-inline">
-    <div class="form-group mx-sm-3 ">
-    <label for="exampleInputTask" class="sr-only">Task</label>
-    <input class="col-xs-3 " type="text" name="task">
-    <button class="btn btn-primary mb-2">Add</button>
+
+<div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Inserstion</h6>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Ajouter tache</h1>
+                            </div>
+                            <form action="./store" method="post" class="user">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input  name="task" type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder=" Name">
+                                    </div>
+                                   
+                                </div>
+                            
+                               
+                                <button class="btn btn-primary col-sm-2 mb-3 mb-sm-0">
+                                    Ajouter
+                               </button>
+                                
+                                
+                            </form>
+                            
+                            
+                        </div>
+                    </div>
+
 </div>
-</form>
-
-
-
-</html>
