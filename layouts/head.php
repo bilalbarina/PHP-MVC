@@ -4,7 +4,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>php mvc</title>
+    <title>
+        Gestion taches
+    </title>
 
     <!-- Custom fonts for this template -->
     <link href="../asset/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
