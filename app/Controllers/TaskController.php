@@ -23,12 +23,12 @@ class TaskController {
       
     view("task.create");
     }
-    public function store(){
-        
+    public function store(){  
         $taskModel= new Task();
-        $taskModel->create($_POST);
-        header('Location:./index');
-        
+        $taskModel->create([
+            "title"=>$_POST['name']
+        ]);
+        header('Location:./index');   
     }
     
     public function delete(){
@@ -55,7 +55,7 @@ class TaskController {
     var_dump($_POST);
     // die();
         $taskModel->find($id)->update([
-            'Task' => $_POST['name']
+            'title' => $_POST['name']
         ]);
         header('Location:./index');
         // var_dump($tasks);

@@ -5,7 +5,7 @@
 namespace App\Controllers;
 
 use App\Models\Model;
-use App\Models\Login;
+use App\Models\User;
 
 class LoginController{
 
@@ -18,20 +18,18 @@ class LoginController{
         view("login.login");
     }
     function login(){
-        $LoginModel = new Login();
+        $LoginModel = new User();
         $login_user =$LoginModel->all()->get();
         if (!empty($_POST)) {
 
             foreach ($login_user as $value){ 
-                
                 if ($_POST["email"]==$value["email"] && $_POST["password"]==$value["password"]) {
-                   $_SESSION["name"]=$value["name"];
+                   $_SESSION["name"]=$value["first_name"];
                    header('Location:../task/index');
                 }
                 else{
                     var_dump("erure");
                 }
-             
                  }
             
         }
@@ -48,11 +46,11 @@ class LoginController{
     }
 
     function register(){
-        $LoginModel = new Login();
+        $LoginModel = new User();
         $LoginModel->create([
 
-                'name' => $_POST['name'],
-                'prenom' => $_POST['prenom'],
+                'first_name' => $_POST['name'],
+                'last_name' => $_POST['prenom'],
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
             

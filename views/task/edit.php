@@ -16,7 +16,7 @@ if (!isset($page)) {
                             <form  action="./update" method="post" class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input value="<?php echo $tasks['Task'] ?>"  name="name" type="text" class="form-control form-control-user" id="exampleFirstName"placeholder=" Name">
+                                        <input value="<?php echo $tasks['title'] ?>"  name="name" type="text" class="form-control form-control-user" id="exampleFirstName"placeholder=" Name">
                                         <input type="hidden" value="<?php echo $tasks['id'] ?>"  name="id">
                                     </div>
                                    
