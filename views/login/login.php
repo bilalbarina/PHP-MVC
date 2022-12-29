@@ -27,9 +27,9 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Entrez le mot de passe" name="password">
                                         </div>
-                                        <div class="text-center">
+                                        <!-- <div class="text-center">
                                         <a class="small" href="">Mot de passe oublié?</a>
-                                    </div>
+                                    </div> -->
                                        </br>
                                         <button class="btn btn-primary btn-user btn-block">
                                         Connexion
