@@ -7,7 +7,7 @@ if (!isset($page)) {
 <div class="card shadow mb-4">
    <div class="card-header py-3">
       <!-- <h6 class="m-0 font-weight-bold text-primary">Gestion des taches</h6> -->
-      <a href="create" class="btn btn-primary ">Ajouter task</a>
+      <a href="create" class="btn btn-primary ">Ajouter tache</a>
    </div>
    <div class="card-body">
       <div class="table-responsive">
@@ -15,7 +15,7 @@ if (!isset($page)) {
             <thead>
                <tr>
                   <th>Id</th>
-                  <th>Name</th>
+                  <th>Titre</th>
                   <th>Action</th>
                </tr>
             </thead>
@@ -28,11 +28,11 @@ if (!isset($page)) {
                      <td style="display: inline-flex;width: 100%">
                         <form action="edit" method="post" style="padding-right: 5px;">
                            <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
-                           <button class="btn btn-warning">Edit</button>
+                           <button class="btn btn-warning">Modifier</button>
                         </form>
                         <form action="delete" method="post">
                            <input type="hidden" value="<?php echo $value['id'] ?>" name="id">
-                           <button class="btn btn-danger">Delete</button>
+                           <button class="btn btn-danger">Supprimer</button>
                         </form>
                      </td>
 
