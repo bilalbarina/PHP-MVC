@@ -19,7 +19,8 @@ class LoginController{
     }
     function login(){
         $LoginModel = new User();
-        $login_user =$LoginModel->all()->get();
+        $login_user =$LoginModel->all()->where('email',$_POST["email"])
+        ->get();
         if (!empty($_POST)) {
 
             foreach ($login_user as $value){ 
