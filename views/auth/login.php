@@ -21,15 +21,15 @@
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Entrez L'Adresse E-Mail..." name="email">
+                                                placeholder="Entrez L'Adresse E-Mail..." name="email" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Entrez le mot de passe" name="password">
+                                                id="exampleInputPassword" placeholder="Entrez le mot de passe" name="password" required>
                                         </div>
-                                        <!-- <div class="text-center">
-                                        <a class="small" href="">Mot de passe oublié?</a>
-                                       </div> -->
+                                        <div class="text-center">
+                                        <p class="small" style="color:red"><?= isset($_SESSION['loginError']) ?   $_SESSION['loginError']: " "  ?> </p>
+                                       </div>
                                 </br>
                                         <button class="btn btn-primary btn-user btn-block">
                                         Connexion
@@ -58,3 +58,8 @@
     </div>
 </body>
 </html>
+<?php  
+
+unset($_SESSION["loginError"]);
+
+?>

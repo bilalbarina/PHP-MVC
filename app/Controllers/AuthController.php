@@ -24,7 +24,9 @@ class AuthController extends Controller{
                    header('Location:../task/index'); 
                 }
                 else{
-                    die("erurr");
+                    $_SESSION['loginError']="The user name or password are incorrect.";
+                
+                    header('Location:../auth/form');   
                 }
     }
     function logout(){
@@ -55,8 +57,9 @@ class AuthController extends Controller{
                 'password' => $password,
             
         ]);
-        header('Location:../auth/form');
-
+                  $name = $first_name ." ".$last_name;
+                  $_SESSION["name"]=$name;
+                header('Location:../task/index'); 
     }
     }
 }
