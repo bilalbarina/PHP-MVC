@@ -39,10 +39,7 @@
                                 <button class="btn btn-primary btn-user btn-block">
                                 Inscrire
                                 </button>
-                                <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> S'inscrire avec google
-                                </a>
+                                
                             </form>
                             <hr>
 
