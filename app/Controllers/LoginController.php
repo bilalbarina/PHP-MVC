@@ -19,21 +19,15 @@ class LoginController{
     }
     function login(){
         $LoginModel = new User();
-        $login_user =$LoginModel->all()->where('email',$_POST["email"])
-        ->get();
-        if (!empty($_POST)) {
-
-            foreach ($login_user as $value){ 
-                if ($_POST["email"]==$value["email"] && $_POST["password"]==$value["password"]) {
-                   $_SESSION["name"]=$value["first_name"];
-                   header('Location:../task/index');
+        $login_user =$LoginModel->all()->where('email',$_POST["email"])->where("password", $_POST["password"])->first(); 
+        if(!is_null($login_user)){
+            $name = $login_user['first_name'] ." ".$login_user['last_name'];
+                    $_SESSION["name"]=$name;
+                   header('Location:../task/index'); 
                 }
                 else{
-                    var_dump("erure");
+                    die("erurr");
                 }
-                 }
-            
-        }
     }
     function logout(){
         if (isset($_SESSION["name"])) {
