@@ -76,31 +76,19 @@
 
 <script>
 
-function validate(e) {
+const first_name = document.getElementById('first_name');
+const last_name = document.getElementById('last_name');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
- var name = document.forms["myform"]["last_name"].value;
- if(name==""){
-    
- alert( "Please enter the name");
- return false;
- }
- var email = document.forms["myform"]["email"].value;
- if(email==""){
- alert("Please enter the email");
- return false;
- }else{
- var re = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
- var x=re.test(email);
- if(x){
- }else{
- alert("Email id not in correct format");
- return false;
- } 
- }  
- var first_name = document.forms["myform"]["fist_name"].value;
- if(first_name==""){
- alert("Please enter the first_name");
- return false;
- }
+form.addEventListener('submit', (e) => {
+let messages = []
+if (first_name.value === '' || first_name.value == null) {
+messages.push('Name is required')
 }
+if (messages.length > 0) {
+e.preventDefault()
+errorElement.innerText = messages.join(',')
+}
+})
 </script>
