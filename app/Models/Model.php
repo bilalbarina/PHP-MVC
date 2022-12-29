@@ -31,7 +31,7 @@ abstract class Model
     public function where($column, $value)
     {
 
-        $this->query .= (str_contains($this->query, ' WHERE ') ? " AND" : "") . " WHERE $column = '$value'";
+        $this->query .= (str_contains($this->query, ' WHERE ') ? " AND" : " WHERE") . " $column = '$value'";
         return $this;
     }
 
