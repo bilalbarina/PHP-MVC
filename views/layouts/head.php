@@ -42,8 +42,8 @@
     <script src="../asset/js/sb-admin-2.min.js"></script>
 
    
-
-
+     <!-- cdn js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
 
 
 

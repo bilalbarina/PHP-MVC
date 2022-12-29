@@ -9,6 +9,8 @@ use App\Models\User;
 
 class LoginController extends Controller{
 
+    
+
     function __construct()
     {
         middleware_guest();
