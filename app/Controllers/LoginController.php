@@ -44,13 +44,26 @@ class LoginController extends Controller{
         $first_name = $this->strip($_POST["first_name"]);
         $last_name = $this->strip($_POST["last_name"]);
         $email = $this->strip($_POST["email"]);
+        $password = $_POST["password"];
         
+
+
         
+        // Validate password strength
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+        
+        if(!$uppercase || !$lowercase || !$number  || strlen($password) < 8) {
+            $passwordErr= 'Password should be at least 8 characters in length and should include at least one upper case letter, one number.';
+           die($password);
+         }else{
+            $password;
+        }             
         //    validation first name
-        $errors = array();
     if (!preg_match("/^[a-zA-Z-' ]*$/",$first_name)) {
         $first_nameErr = "Only letters and white space allowed";
-        $errors['first_name']=$first_nameErr;
+        die($first_nameErr);
     }
     else{
         $first_nameCorrect =$first_name;
@@ -58,44 +71,31 @@ class LoginController extends Controller{
     //    validation last name
     if (!preg_match("/^[a-zA-Z-' ]*$/",$last_name)) {
         $last_nameErr = "Only letters and white space allowed";
-        $errors['last_name']=$last_nameErr;
-
+        die($last_nameErr);
     }
     else{
         $last_nameCorrect = $last_name;
        }
-
     // validation email 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
          $emailErr = "Invalid email format";
-         $errors['email'] = $emailErr;
-
+        die($emailErr);
          }
     else{
         $emailCorrect =$email;
          }
-
-        //  var_dump($message);
-        // //  die();
-          if(!empty($errors)){
-
-         $_SESSION["errors"]=$errors;
-         header('Location:../login/formRegister');
-
-        }  else{
-
         $LoginModel = new User();
         $LoginModel->create([
 
                 'first_name' => $first_nameCorrect,
                 'last_name' => $last_nameCorrect,
                 'email' =>$emailCorrect ,
-                'password' => $_POST['password'],
+                'password' => $password,
             
         ]);
         header('Location:../login/form');
 
-    }
+    
     }
 }
 

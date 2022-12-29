@@ -22,7 +22,7 @@
                                             placeholder=" Nom">
                                     </div>
                                     <p style="color: #ff000080; ">
-                                <?= !isset($_SESSION["errors"]) ? '': $_SESSION["errors"]['first_name']?>
+                                <?= !isset($_SESSION["errors"]['first_name']) ? '': $_SESSION["errors"]['first_name']?>
                                 </p>
                                 <!--  -->
                                     
@@ -33,7 +33,7 @@
                                     </div>
                                                    <!-- message eruur -->
                                 <p style="color: #ff000080; ">
-                                <?= !isset($_SESSION["errors"]) ? '': $_SESSION["errors"]['last_name']?>
+                                <?= !isset($_SESSION["errors"]['last_name']) ? '': $_SESSION["errors"]['last_name']?>
                                 </p>
                                 <!--  -->
                                 </div>
@@ -43,7 +43,7 @@
                                 </div>
                                              <!-- message eruur -->
                                 <p style="color: #ff000080; ">
-                                <?= !isset($_SESSION["errors"]) ? '': $_SESSION["errors"]['email']?>
+                                <?= !isset($_SESSION["errors"]['email']) ? '': $_SESSION["errors"]['email']?>
                                 </p>
                                 <!--  -->
                                 <div class="form-group row">
@@ -53,7 +53,7 @@
                                     </div>
                                     <!-- message eruur -->
                                     <p style="color: #ff000080; ">
-                                <?= !isset($_SESSION["errors"]) ? '': $_SESSION["errors"]['password']?>
+                                <?= !isset($_SESSION["errors"]['password']) ? '': $_SESSION["errors"]['password']?>
                                 </p>  
                                 <!--  -->
                             </div>
