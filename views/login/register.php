@@ -19,7 +19,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input  name='name' type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder=" Name">
+                                            placeholder=" Nom">
                                     </div>
                                     <div class="col-sm-6">
                                         <input name='prenom'  type="text" class="form-control form-control-user" id="exampleLastName"
@@ -28,20 +28,20 @@
                                 </div>
                                 <div class="form-group">
                                     <input   name='email' type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                        placeholder="L'Adresse E-Mail">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input name ='password' type="password" class="form-control form-control-user"
-                                            id="Password" placeholder="Password">
+                                            id="Password" placeholder="mot de passe">
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block">
-                                    Register
+                                Inscrire
                                 </button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                    <i class="fab fa-google fa-fw"></i> S'inscrire avec google
                                 </a>
                             </form>
                             <hr>
