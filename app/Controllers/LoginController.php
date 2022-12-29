@@ -13,7 +13,6 @@ class LoginController extends Controller{
     {
         middleware_guest();
     }
-
     function form(){
         view("login.login");
     }
@@ -35,7 +34,6 @@ class LoginController extends Controller{
           header('Location:../login/form');
         }
     }
-
     function formRegister(){
         view("login.register");
     }
@@ -45,10 +43,6 @@ class LoginController extends Controller{
         $last_name = $this->strip($_POST["last_name"]);
         $email = $this->strip($_POST["email"]);
         $password = $_POST["password"];
-        
-
-
-        
         // Validate password strength
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
