@@ -46,7 +46,7 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../login/logout" >
+                <a class="dropdown-item" href="../auth/logout" >
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                 </a>
@@ -57,7 +57,7 @@
         else{
             ?>
         
-        <a class="dropdown-item" href="../login/form" >
+        <a class="dropdown-item" href="../auth/form" >
         <i class="fas fa-sign-alt fa-sm fa-fw mr-2 text-gray-400"></i>
         Login
     </a>
