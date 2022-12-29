@@ -50,7 +50,11 @@ abstract class Model
 
     public function first()
     {
-        return $this->get()[0];
+        try {
+            return $this->get()[0];
+        } catch (\Exception) {
+            return null;
+        }
     }
 
     public function create(array $data)
