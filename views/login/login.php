@@ -42,9 +42,9 @@
                                     </div>
                                     
                                     <div class="text-center">
-                                    <form action="./formRegister" method="post">
-                                            <button class="small" >Créez un compte!</button>
-                                    </form> 
+                                    
+                                            <a href="./formRegister" class="small" >Créez un compte!</a>
+                                   
                         
                                     </div>
                                 </div>
