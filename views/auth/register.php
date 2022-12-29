@@ -16,13 +16,14 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Créez un compte!</h1>
                             </div>
-                            <form name="myform"  onsubmit="return validate()"  action="./register" method='post'  class="user">
+                            
+                            <form name="myform" id="form" action="./register" method='post'  class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input  name='first_name' type="text" class="form-control form-control-user" id="exampleFirstName"
                                             placeholder=" Nom">
                                     </div>
-                                    <p style="color: #ff000080; " id="first_name">
+                                    <p style="color: #ff000080; " id="error">
                                 </p>
                                 <!--  -->
                                     
@@ -73,22 +74,3 @@
 
 </body>
 </html>
-
-<script>
-
-const first_name = document.getElementById('first_name');
-const last_name = document.getElementById('last_name');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-
-form.addEventListener('submit', (e) => {
-let messages = []
-if (first_name.value === '' || first_name.value == null) {
-messages.push('Name is required')
-}
-if (messages.length > 0) {
-e.preventDefault()
-errorElement.innerText = messages.join(',')
-}
-})
-</script>

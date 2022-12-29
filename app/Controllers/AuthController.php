@@ -42,41 +42,48 @@ class AuthController extends Controller{
         $last_name = $this->strip($_POST["last_name"]);
         $email = $this->strip($_POST["email"]);
         $password = $_POST["password"];
+        $error=array();
         // Validate password strength
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
         $number    = preg_match('@[0-9]@', $password);
         
         if(!$uppercase || !$lowercase || !$number  || strlen($password) < 8) {
-            $passwordErr= 'Password should be at least 8 characters in length and should include at least one upper case letter, one number.';
-           die($passwordErr);
-         }else{
+            $error["password"] = $passwordErr= 'Password should be at least 8 characters in length and should include at least one upper case letter, one number.';
+        }else{
             $password;
         }             
         //    validation first name
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$first_name)) {
-        $first_nameErr = "Only letters and white space allowed";
-        die($first_nameErr);
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$first_name) || $first_name == "") {
+        $error["first_name"] =  $first_nameErr = "Only letters and white space allowed";
+      
     }
     else{
         $first_nameCorrect =$first_name;
        }
     //    validation last name
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$last_name)) {
-        $last_nameErr = "Only letters and white space allowed";
-        die($last_nameErr);
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$last_name)  || $first_name == "") {
+        $error["last_name"] = $last_nameErr = "Only letters and white space allowed";
+       
     }
     else{
         $last_nameCorrect = $last_name;
        }
     // validation email 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-         $emailErr = "Invalid email format";
-        die($emailErr);
+        $error["email"] =  $emailErr = "Invalid email format";
+        
          }
     else{
         $emailCorrect =$email;
          }
+
+         if(!empty($error)){
+            $_SESSION["error"]=$error;
+            var_dump($_SESSION["error"]);
+            die();
+            header('Location:../auth/formRegister');
+         }{
         $LoginModel = new User();
         $LoginModel->create([
 
@@ -88,7 +95,7 @@ class AuthController extends Controller{
         ]);
         header('Location:../auth/form');
 
-    
+    }
     }
 }
 
