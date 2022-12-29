@@ -5,9 +5,6 @@ use App\Models\Model;
 use App\Models\User;
 
 class AuthController extends Controller{
-
-    
-
     function __construct()
     {
         middleware_guest();
@@ -24,7 +21,7 @@ class AuthController extends Controller{
                    header('Location:../task/index'); 
                 }
                 else{
-                    $_SESSION['loginError']="The user name or password are incorrect.";
+                    $_SESSION['loginError']="The user email or password are incorrect.";
                 
                     header('Location:../auth/form');   
                 }
