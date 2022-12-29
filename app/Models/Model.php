@@ -9,7 +9,7 @@ abstract class Model {
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $dbName = 'task';
+    private $dbName = 'tasks';
     protected $pdo;
     protected $query = '';
     protected $table = '';
