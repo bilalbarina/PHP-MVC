@@ -1,12 +1,23 @@
 <?php
-function sessionPages(){
+function middleware_auth(){
 if(!isset( $_SESSION['name']) ){ 
     header('Location:../login/form');
    }
-
-var_dump('ggg');
-die();
+  
 }
+function middleware_guest(){
+
+     if(isset( $_SESSION['name'])) {
+        header('Location:../task/index');
+
+}
+}
+  
+// if(isset( $_SESSION['name']) && $_GET['request'] = "login/form" ){ 
+
+//     header('Location:../task/index');
+//    }
+
 //    &&  $_GET['request'] != "login/formRegister" && $_GET['request'] != "login/form"
 
 function base_path($path = null)

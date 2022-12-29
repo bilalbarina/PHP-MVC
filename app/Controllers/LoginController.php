@@ -3,13 +3,17 @@
 
 
 namespace App\Controllers;
-session_start();
 
 use App\Models\Model;
 use App\Models\Login;
 
 class LoginController{
-  
+
+    function __construct()
+    {
+        middleware_guest();
+    }
+
     function form(){
         view("login.login");
     }

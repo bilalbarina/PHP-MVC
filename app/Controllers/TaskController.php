@@ -9,7 +9,7 @@ class TaskController {
 
     function __construct()
     {
-        sessionPages(); 
+        middleware_auth(); 
     }
   
     public function index() {
