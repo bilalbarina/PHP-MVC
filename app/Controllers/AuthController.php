@@ -4,14 +4,14 @@ namespace App\Controllers;
 use App\Models\Model;
 use App\Models\User;
 
-class LoginController extends Controller{
+class AuthController extends Controller{
 
     function __construct()
     {
         middleware_guest();
     }
     function form(){
-        view("login.login");
+        view("auth.login");
     }
     function login(){        
         $LoginModel = new User();
@@ -28,11 +28,11 @@ class LoginController extends Controller{
     function logout(){
         if (isset($_SESSION["name"])) {
           unset($_SESSION["name"]);
-          header('Location:../login/form');
+          header('Location:../auth/form');
         }
     }
     function formRegister(){
-        view("login.register");
+        view("auth.register");
     }
 
     function register(){
@@ -47,7 +47,7 @@ class LoginController extends Controller{
         
         if(!$uppercase || !$lowercase || !$number  || strlen($password) < 8) {
             $passwordErr= 'Password should be at least 8 characters in length and should include at least one upper case letter, one number.';
-           die($password);
+           die($passwordErr);
          }else{
             $password;
         }             
@@ -84,7 +84,7 @@ class LoginController extends Controller{
                 'password' => $password,
             
         ]);
-        header('Location:../login/form');
+        header('Location:../auth/form');
 
     
     }
