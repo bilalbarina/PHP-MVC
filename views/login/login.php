@@ -27,19 +27,17 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Entrez le mot de passe" name="password">
                                         </div>
-                                        
+                                        <!-- <div class="text-center">
+                                        <a class="small" href="">Mot de passe oublié?</a>
+                                       </div> -->
+                                </br>
                                         <button class="btn btn-primary btn-user btn-block">
                                         Connexion
                                         </button>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i>  Google
-                                        </a>
+                                       
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="">Mot de passe oublié?</a>
-                                    </div>
+                                    
                                     
                                     <div class="text-center">
                                     
