@@ -53,12 +53,10 @@ class TaskController {
         $id = $_POST["id"];
         $taskModel= new Task();
     var_dump($_POST);
-    // die();
-        $taskModel->find($id)->update([
+        $taskModel->find($id)
+        ->update([
             'title' => $_POST['name']
         ]);
-        header('Location:./index');
-        // var_dump($tasks);
-        
+        header('Location:./index');        
     }
 }
