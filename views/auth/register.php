@@ -16,14 +16,14 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Créez un compte!</h1>
                             </div>
-                            
-                            <form name="myform" id="form" action="./register" method='post'  class="user">
+                            <form name="myform" action="./register" method='post'  class="user">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input  name='first_name' type="text" class="form-control form-control-user" id="exampleFirstName"
                                             placeholder=" Nom">
                                     </div>
-                                    <p style="color: #ff000080; " id="error">
+                                    <p style="color: #ff000080; " id="first_name">
+                                    <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["first_name"]: ""  ?>
                                 </p>
                                 <!--  -->
                                     
@@ -34,6 +34,7 @@
                                     </div>
                                                    <!-- message eruur -->
                                 <p style="color: #ff000080; "id="last_name">
+                                <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["last_name"]: ""  ?>
                                 </p>
                                 <!--  -->
                                 </div>
@@ -43,6 +44,7 @@
                                 </div>
                                              <!-- message eruur -->
                                 <p style="color: #ff000080; "id="email">
+                                <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["email"]: ""  ?>
                                 </p>
                                 <!--  -->
                                 <div class="form-group row">
@@ -52,6 +54,7 @@
                                     </div>
                                     <!-- message eruur -->
                                     <p style="color: #ff000080; "id="password">
+                                    <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["password"]: ""  ?>
                                 </p>  
                                 <!--  -->
                             </div>
@@ -74,3 +77,8 @@
 
 </body>
 </html>
+<?php  
+
+unset($_SESSION["error"]);
+
+?>

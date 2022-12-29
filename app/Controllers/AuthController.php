@@ -80,10 +80,8 @@ class AuthController extends Controller{
 
          if(!empty($error)){
             $_SESSION["error"]=$error;
-            var_dump($_SESSION["error"]);
-            die();
             header('Location:../auth/formRegister');
-         }{
+         }else{
         $LoginModel = new User();
         $LoginModel->create([
 
