@@ -23,7 +23,7 @@
                                             placeholder=" Nom">
                                     </div>
                                     <p style="color: #ff000080; " id="first_name">
-                                    <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["first_name"]: ""  ?>
+                                    <?php echo isset($_SESSION["error"]["first_name"]) ? $_SESSION["error"]["first_name"]: ""  ?>
                                 </p>
                                 <!--  -->
                                     
@@ -34,7 +34,7 @@
                                     </div>
                                                    <!-- message eruur -->
                                 <p style="color: #ff000080; "id="last_name">
-                                <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["last_name"]: ""  ?>
+                                <?php echo isset($_SESSION["error"]["last_name"]) ? $_SESSION["error"]["last_name"]: ""  ?>
                                 </p>
                                 <!--  -->
                                 </div>
@@ -44,7 +44,7 @@
                                 </div>
                                              <!-- message eruur -->
                                 <p style="color: #ff000080; "id="email">
-                                <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["email"]: ""  ?>
+                                <?php echo isset($_SESSION["error"]["email"]) ? $_SESSION["error"]["email"]: ""  ?>
                                 </p>
                                 <!--  -->
                                 <div class="form-group row">
@@ -54,7 +54,7 @@
                                     </div>
                                     <!-- message eruur -->
                                     <p style="color: #ff000080; "id="password">
-                                    <?php echo isset($_SESSION["error"]) ? $_SESSION["error"]["password"]: ""  ?>
+                                    <?php echo isset($_SESSION["error"]["password"]) ? $_SESSION["error"]["password"]: ""  ?>
                                 </p>  
                                 <!--  -->
                             </div>

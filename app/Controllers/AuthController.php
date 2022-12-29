@@ -38,56 +38,20 @@ class AuthController extends Controller{
     }
 
     function register(){
-        $first_name = $this->strip($_POST["first_name"]);
-        $last_name = $this->strip($_POST["last_name"]);
-        $email = $this->strip($_POST["email"]);
-        $password = $_POST["password"];
-        $error=array();
-        // Validate password strength
-        $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
-        
-        if(!$uppercase || !$lowercase || !$number  || strlen($password) < 8) {
-            $error["password"] = $passwordErr= 'Password should be at least 8 characters in length and should include at least one upper case letter, one number.';
-        }else{
-            $password;
-        }             
-        //    validation first name
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$first_name) || $first_name == "") {
-        $error["first_name"] =  $first_nameErr = "Only letters and white space allowed";
-      
-    }
-    else{
-        $first_nameCorrect =$first_name;
-       }
-    //    validation last name
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$last_name)  || $first_name == "") {
-        $error["last_name"] = $last_nameErr = "Only letters and white space allowed";
+        $first_name = $this->validation(["first_name"=>$_POST["first_name"]]);
+        $last_name = $this->validation(["last_name"=>$_POST["last_name"]]);
+        $email = $this->validation(["email"=>$_POST["email"]]);
+        $password = $this->validation(["password"=> $_POST["password"]]);
        
-    }
-    else{
-        $last_nameCorrect = $last_name;
-       }
-    // validation email 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error["email"] =  $emailErr = "Invalid email format";
-        
-         }
-    else{
-        $emailCorrect =$email;
-         }
-
-         if(!empty($error)){
-            $_SESSION["error"]=$error;
+         if(!empty($_SESSION["error"])){
             header('Location:../auth/formRegister');
          }else{
         $LoginModel = new User();
         $LoginModel->create([
 
-                'first_name' => $first_nameCorrect,
-                'last_name' => $last_nameCorrect,
-                'email' =>$emailCorrect ,
+                'first_name' => $first_name,
+                'last_name' => $last_name,
+                'email' =>$email ,
                 'password' => $password,
             
         ]);
