@@ -37,10 +37,10 @@ class AuthController extends Controller{
     }
 
     function register(){
-        $first_name = $this->validation(["first_name"=>$_POST["first_name"]]);
-        $last_name = $this->validation(["last_name"=>$_POST["last_name"]]);
-        $email = $this->validation(["email"=>$_POST["email"]]);
-        $password = $this->validation(["password"=> $_POST["password"]]);
+        $first_name = $this->validation("first_name","string");
+        $last_name = $this->validation("last_name","string");
+        $email = $this->validation("email","email");
+        $password = $this->validation("password","password");
        
          if(!empty($_SESSION["error"])){
             header('Location:../auth/formRegister');
@@ -59,5 +59,46 @@ class AuthController extends Controller{
                 header('Location:../task/index'); 
     }
     }
+    function forgotPasswordSubmit(){
+
+        view("auth.forgotPassword");
+    }
+    function forgotPassword(){
+       
+        $LoginModel = new User();
+        $login_user =$LoginModel->all()->where('email',$_POST["email"])
+        ->where("last_name", $_POST["last_name"])
+        ->where("first_name", $_POST["first_name"])->first();
+        if(isset($login_user)){ 
+
+            view('auth.updatePassword',compact("login_user"));
+        }else{
+            $_SESSION['forgotPasswordErr']="The user email or first name or last name are incorrect.";        
+            header('Location:../auth/forgotPassword');   
+        
+    }
+}
+    function updatePassword(){
+        // $newPassword = $this->validation("newPassword",'password');
+        // $confirmNewPassword = $this->validation("confirmNewPassword",'password');
+     
+        if(!empty($_SESSION["error"])){
+            header('Location:../auth/forgotPassword');
+         }else{
+        if($_POST["newPassword"]==$_POST["confirmNewPassword"]){
+            $LoginModel = new User();
+            $LoginModel->find($_POST['id'])
+            ->update([
+                'password' => $_POST['newPassword']
+            ]);
+          
+          header('Location:../auth/form'); 
+
+        }
+     $_SESSION['ConfirmPasswordErr']="The user email or first name or last name are incorrect.";        
+        var_dump($_SESSION['ConfirmPasswordErr']);
+        die();
+    }
+}
 }
 

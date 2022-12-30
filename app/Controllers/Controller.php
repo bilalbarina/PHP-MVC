@@ -4,16 +4,18 @@ namespace App\Controllers;
 
 abstract class Controller {
 
-          public function validation(array $data){
-            $array_value =array_values($data);
-            $array_key =array_keys($data);
-            $value= implode(" ", $array_value);
-            $key= implode(" ", $array_key);
+          public function validation($key ,$rule){
+            // $array_value =array_values($rule);
+            // $array_key =array_keys($rule);
+            // $rule= implode(" ", $array_value);
+            // $key= implode(" ", $array_key);
           
-            $value = trim($value);
-            $value = stripslashes($value);
-            $value = htmlspecialchars($value);
-            if($key == 'email' ){
+            $value = trim($_POST[$key]);
+            $value = stripslashes($_POST[$key]);
+            $value = htmlspecialchars($_POST[$key]);
+
+          ;
+            if($rule == 'email' ){
               if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
                 $_SESSION["error"][$key]= $emailErr = "Invalid email format";
                 
@@ -23,7 +25,7 @@ abstract class Controller {
                     return $value;
                 }
           }
-          if($key == "password"){   
+          if($rule == "password"){   
 
           $uppercase = preg_match('@[A-Z]@', $value);
           $lowercase = preg_match('@[a-z]@', $value);
@@ -38,7 +40,7 @@ abstract class Controller {
             return $value;
           }
           }
-          else{
+          if($rule == "string"){ 
           if (!preg_match("/^[a-zA-Z-' ]*$/",$value) || $value == "") {
             $_SESSION["error"][$key]= $stringErr = "Only letters and white space allowed";
 
@@ -46,8 +48,9 @@ abstract class Controller {
           else{
             unset($_SESSION["error"][$key]);
               return $value;
+          
           }
-          }
+        }
 
 
           }

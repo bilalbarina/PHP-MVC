@@ -30,6 +30,10 @@
                                         <div class="text-center">
                                         <p class="small" style="color:red"><?= isset($_SESSION['loginError']) ?   $_SESSION['loginError']: " "  ?> </p>
                                        </div>
+                                       
+                                       <div class="text-center">
+                                        <a class="small" href="./forgotPasswordSubmit">Mot de passe oublié?</a>
+                                    </div>
                                 </br>
                                         <button class="btn btn-primary btn-user btn-block">
                                         Connexion
