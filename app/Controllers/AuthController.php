@@ -64,28 +64,34 @@ class AuthController extends Controller{
         view("auth.forgotPassword");
     }
     function forgotPassword(){
-       
+        if(isset($_SESSION["user"])){
+            $login_user=$_SESSION["user"];
+            view('auth.update_Password',compact("login_user"));
+        }else{
         $LoginModel = new User();
         $login_user =$LoginModel->all()->where('email',$_POST["email"])
         ->where("last_name", $_POST["last_name"])
-        ->where("first_name", $_POST["first_name"])->first();
+        ->where("first_name", $_POST["first_name"])->first();    
+      
         if(isset($login_user)){ 
-
-            view('auth.updatePassword',compact("login_user"));
+            $_SESSION["user"]=$login_user;
+            view('auth.update_Password',compact("login_user"));
         }else{
             $_SESSION['forgotPasswordErr']="The user email or first name or last name are incorrect.";        
-            header('Location:../auth/forgotPassword');   
+            header('Location:../auth/forgotPasswordSubmit');   
         
     }
 }
+}
     function updatePassword(){
-        // $newPassword = $this->validation("newPassword",'password');
-        // $confirmNewPassword = $this->validation("confirmNewPassword",'password');
+        $newPassword = $this->validation("newPassword",'password');
+        $confirmNewPassword = $this->validation("confirmNewPassword",'password');
      
         if(!empty($_SESSION["error"])){
-            header('Location:../auth/forgotPassword');
+         
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
          }else{
-        if($_POST["newPassword"]==$_POST["confirmNewPassword"]){
+        if($confirmNewPassword==$newPassword){
             $LoginModel = new User();
             $LoginModel->find($_POST['id'])
             ->update([
@@ -94,10 +100,10 @@ class AuthController extends Controller{
           
           header('Location:../auth/form'); 
 
-        }
-     $_SESSION['ConfirmPasswordErr']="The user email or first name or last name are incorrect.";        
-        var_dump($_SESSION['ConfirmPasswordErr']);
-        die();
+        }else{
+     $_SESSION['ConfirmPasswordErr']="password and confirm password not matched.";   
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
     }
 }
 }

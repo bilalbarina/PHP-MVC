@@ -51,7 +51,9 @@
                                 
                             </form>
                             <hr>
+                            <?php echo isset( $_SESSION['forgotPasswordErr']) ? $_SESSION['forgotPasswordErr']: ""  ?>
 
+                           
                         </div>
                     </div>
                 </div>
@@ -66,6 +68,6 @@
 </html>
 <?php  
 
-unset($_SESSION["error"]);
+unset($_SESSION["forgotPasswordErr"]);
 
 ?>
